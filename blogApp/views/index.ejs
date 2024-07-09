@@ -1,0 +1,33 @@
+<%-include("header.ejs")  %>
+
+<main>
+  <div class="main">
+    <%posts.forEach(post=>{%>
+      <div class="blog">  
+        <h4 id="title"><%= post.title %>
+        <p id="author">
+          by <%= post.author %>
+        </p></h4>
+        <div class="content">
+          <%= post.content %>
+        </div>
+        <a href="/edit/<%= post.id %>"><button class="btn1" name="edit" >Edit</button></a>
+       <a href="/api/posts/delete/<%= post.id %>"><button class="btn2" name="delete" >Delete</button></a>    
+      </div>
+    <%})%>
+  </div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
